@@ -40,4 +40,10 @@ public class TaskController {
     public ResponseEntity<Task> updateTaskById(@PathVariable (value = "id") Long id, @RequestBody Task task) {
         return service.updateTask(task,id);
     }
+
+    @DeleteMapping("exclui-task")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<Object> deleteTask(@PathVariable(value = "id") Long id){
+        return service.deleteById(id);
+    }
 }
