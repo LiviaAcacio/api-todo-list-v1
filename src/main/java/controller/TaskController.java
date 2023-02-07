@@ -35,4 +35,9 @@ public class TaskController {
         return service.findTaskById(id);
     }
 
+    @PutMapping("/atualiza-task/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Task> updateTaskById(@PathVariable (value = "id") Long id, @RequestBody Task task) {
+        return service.updateTask(task,id);
+    }
 }
